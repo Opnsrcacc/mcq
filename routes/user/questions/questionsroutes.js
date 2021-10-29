@@ -9,7 +9,7 @@ module.exports = () => {
 
     questionRoutes.post('/add',
         check('name').not().isEmpty().withMessage('Name is required'),
-        check('options').not().isArray().withMessage('Choice is required'),
+        check('options').not().isEmpty().isArray().withMessage('Choice is required'),
         check('status').not().isEmpty().withMessage('Status is required'),
         verifyJwt,
         addQuestions
